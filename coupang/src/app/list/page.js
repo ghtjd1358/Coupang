@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 
 export default function List() {
   let products = ['tomato', 'pasta', 'cheese'];
-  const [counter, setCounter] = useState(Array(products.length).fill(0))
+  // const [counter, setCounter] = useState(Array(products.length).fill(0))
+  const [counter, setCounter] = useState(products.map(item => 0))
+  console.log('counter', counter)
 
   const handlerIncrement = (i) => {
     let ctn = [...counter]
     ctn[i]++
+    
     setCounter(ctn)
   }
 
@@ -15,8 +18,9 @@ export default function List() {
     let ctn = [...counter]
     if(ctn[i] > 0){
       ctn[i]--
+      setCounter(ctn)
     }
-    setCounter(ctn)
+    
   }
 
   return (
