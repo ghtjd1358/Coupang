@@ -10,7 +10,6 @@ export default function List() {
   const handlerIncrement = (i) => {
     let ctn = [...counter]
     ctn[i]++
-    
     setCounter(ctn)
   }
 
@@ -36,6 +35,6 @@ export default function List() {
         </div>
       ))}
     </div>
-    
+
   );
 }
